@@ -1,14 +1,22 @@
 class Courier:
-    def __init__(self) -> None:
+    def __init__(self, name):
+        self.name = name
+
+    def calculate_fee(self):
         pass
 
 class BikeCourier(Courier):
-    pass
+    def calculate_fee(self):
+        return f"{self.name}: Fee is $3"
 
 class CarCourier(Courier):
-    pass
+    def calculate_fee(self):
+        return f"{self.name}: Fee is $5"
 
 class DroneCourier(Courier):
-    pass
+    def calculate_fee(self):
+        return f"{self.name}: Fee is $8 (fastest)"
 
-
+agents = [BikeCourier("Aziz"), CarCourier("Javlon"), DroneCourier("SkyBot")]
+for c in agents:
+    print(c.calculate_fee())
